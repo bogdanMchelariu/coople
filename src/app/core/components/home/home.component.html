@@ -1,0 +1,7 @@
+<p>home works!</p>
+
+<coo-address-form [editAddress]="selectedAddress" (newAddressEvent)="addAddress($event)"></coo-address-form>
+<coo-address-list
+  [addressList]="data.getAddressList() | async"
+  (selectAddressEvent)="selectedAddress = $event"
+></coo-address-list>

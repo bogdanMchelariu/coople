@@ -1,0 +1,8 @@
+<p>address-list works!</p>
+
+<div *ngFor="let item of addressList">
+  <div (click)="selectItem(item)">
+    {{ item.name }}
+  </div>
+  <div>{{ item.address.country }} {{ item.address.zip }}</div>
+</div>

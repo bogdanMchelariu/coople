@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$coople-app-primary: mat-palette($mat-blue, 900);
+
+$coople-app-accent: mat-palette($mat-blue-grey, 800);
+$coople-app-warn: mat-palette($mat-red, 900);
+$coople-app-theme: mat-light-theme($coople-app-primary, $coople-app-accent, $coople-app-warn);
+
+@include angular-material-theme($coople-app-theme);
+
+$coople-typography: mat-typography-config(
+  $font-family: 'Roboto, "Helvetica Neue", sans-serif'
+);
+@include angular-material-typography($coople-typography);
