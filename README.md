@@ -1,7 +1,7 @@
 # Coople
 
-- Hi,
-- In order to run this app please run:
+Hi,<br />
+In order to run this app please run:
 
    ````
    npm i
@@ -12,6 +12,5 @@
 
 ## Contact
 
-email: chelariu.bogdan.91@gmail.com
-phone: 0040723092270
-````
+ - email: chelariu.bogdan.91@gmail.com
+ - phone: 0040723092270
