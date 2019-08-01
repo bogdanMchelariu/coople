@@ -3,7 +3,7 @@
 Hi,<br />
 In order to run this app please run:
 
-   ````
+   ```
    npm i
    ```
    ```
