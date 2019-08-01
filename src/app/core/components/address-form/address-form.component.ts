@@ -1,11 +1,12 @@
-import { Component, OnInit, Output, EventEmitter, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, OnChanges, SimpleChanges, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { IAddress, Address } from '../../models/Address';
 
 @Component({
   selector: 'coo-address-form',
   templateUrl: './address-form.component.html',
-  styleUrls: ['./address-form.component.scss']
+  styleUrls: ['./address-form.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AddressFormComponent implements OnInit, OnChanges {
   addressForm: FormGroup;
@@ -29,7 +30,7 @@ export class AddressFormComponent implements OnInit, OnChanges {
       name: ['', [Validators.required]],
       address: this.fb.group({
         country: ['', [Validators.required]],
-        zip: ['', [Validators.required]]
+        zip: ['', [Validators.required, Validators.pattern(/^ABC/)]]
       })
     });
   }

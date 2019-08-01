@@ -1,0 +1,17 @@
+{
+  "FormTitle": "Creaza/Editeaza Adreasa",
+  "Name": "Nume",
+  "NamePlaceholder": "Scrie Nume",
+  "NameRequired": "Numele este obligatoriu",
+  "Country": "Tara",
+  "UK": "Marea Britanie",
+  "Romania": "Romania",
+  "France": "Franta",
+  "CountryRequired": "Selecteaza o tara",
+  "ZIPPlaceholder": "Scrie un ZIP care incepe cu ABC",
+  "ZIPRequired": "ZIP este obligatoriu",
+  "ZIPPattern": "ZIP-ul trebuie sa inceapa cu ABC",
+  "Update": "Updateaza",
+  "Create": "Nou",
+  "Edit": "Editeaza"
+}

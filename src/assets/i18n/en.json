@@ -1,0 +1,17 @@
+{
+  "FormTitle": "Create/Edit Address",
+  "Name": "Name",
+  "NamePlaceholder": "Enter Name",
+  "NameRequired": "The name field is required",
+  "Country": "Country",
+  "UK": "United Kingdom",
+  "Romania": "Romania",
+  "France": "France",
+  "CountryRequired": "Please select a country",
+  "ZIPPlaceholder": "Enter a ZIP starting with ABC",
+  "ZIPRequired": "The ZIP is Required",
+  "ZIPPattern": "The ZIP must start with ABC",
+  "Update": "Update",
+  "Create": "Create",
+  "Edit": "Edit"
+}

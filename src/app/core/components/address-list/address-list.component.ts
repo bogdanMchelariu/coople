@@ -1,10 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 import { Address } from '../../models/Address';
 
 @Component({
   selector: 'coo-address-list',
   templateUrl: './address-list.component.html',
-  styleUrls: ['./address-list.component.scss']
+  styleUrls: ['./address-list.component.scss'],
+  encapsulation : ViewEncapsulation.None
 })
 export class AddressListComponent implements OnInit {
   @Input() addressList: Address[];

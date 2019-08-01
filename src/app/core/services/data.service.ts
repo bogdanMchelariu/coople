@@ -12,17 +12,17 @@ export class DataService {
 
   private mockData: IAddress[] = [
     {
-      name: 'Timisoara',
+      name: 'First address',
       address: {
         country: 'Romania',
-        zip: '12345'
+        zip: 'ABC18'
       }
     },
     {
-      name: 'London',
+      name: 'Second address',
       address: {
         country: 'UK',
-        zip: '54444'
+        zip: 'ABC21'
       }
     }
   ];

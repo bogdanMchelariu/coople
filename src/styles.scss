@@ -15,3 +15,8 @@ $coople-typography: mat-typography-config(
   $font-family: 'Roboto, "Helvetica Neue", sans-serif'
 );
 @include angular-material-typography($coople-typography);
+
+
+body{
+  margin: 0;
+}

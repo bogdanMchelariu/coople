@@ -1,38 +1,43 @@
-<p>address-form works!</p>
 <mat-card>
   <mat-card-header>
-    <mat-card-title>Adress Order</mat-card-title>
+    <mat-card-title>{{ 'FormTitle' | translate }}</mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <form [formGroup]="addressForm" (submit)="onSubmit()">
       <mat-form-field appearance="outline">
-        <mat-label>Name</mat-label>
-        <input matInput formControlName="name" placeholder="Enter Name" />
-        <!-- <mat-error *ngIf="orderForm.get('order').get('customerReferenceId').errors">{{
-          orderForm.get('order').get('customerReferenceId').errors | json
-        }}</mat-error> -->
+        <mat-label>{{ 'Name' | translate }}</mat-label>
+        <input matInput formControlName="name" placeholder="{{ 'NamePlaceholder' | translate }}" />
+        <mat-error *ngIf="addressForm.get('name').errors">{{ 'NameRequired' | translate }}</mat-error>
       </mat-form-field>
-      <div formGroupName="address">
+      <div class="address-container" formGroupName="address">
         <mat-form-field appearance="outline">
-          <mat-label>Country</mat-label>
-          <input matInput formControlName="country" placeholder="Enter Country" />
-          <!-- <mat-error *ngIf="orderForm.get('order').get('customerReferenceId').errors">{{
-                      orderForm.get('order').get('customerReferenceId').errors | json
-                    }}</mat-error> -->
+          <mat-label>{{ 'Country' | translate }}</mat-label>
+          <mat-select formControlName="country">
+            <mat-option value="UK">{{ 'UK' | translate }}</mat-option>
+            <mat-option value="Romania">{{ 'Romania' | translate }}</mat-option>
+            <mat-option value="France">{{ 'France' | translate }}</mat-option>
+          </mat-select>
+
+          <mat-error *ngIf="addressForm.get('address').get('country').invalid">
+            {{ 'CountryRequired' | translate }}
+          </mat-error>
         </mat-form-field>
         <mat-form-field appearance="outline">
           <mat-label>ZIP</mat-label>
-          <input matInput formControlName="zip" placeholder="Enter Zip" />
-          <!-- <mat-error *ngIf="orderForm.get('order').get('customerReferenceId').errors">{{
-                  orderForm.get('order').get('customerReferenceId').errors | json
-                }}</mat-error> -->
+          <input matInput #input formControlName="zip" placeholder="{{ 'ZIPPlaceholder' | translate }}" maxlength="5" />
+          <mat-hint align="end">{{ input.value?.length || 0 }}/5</mat-hint>
+          <mat-error *ngIf="addressForm.get('address').get('zip').errors">{{
+            addressForm.get('address').get('zip').errors['required'] === true
+              ? ('ZIPRequired' | translate)
+              : ('ZIPPattern' | translate)
+          }}</mat-error>
         </mat-form-field>
       </div>
     </form>
   </mat-card-content>
   <mat-card-actions>
     <button mat-raised-button [disabled]="!addressForm.valid" color="primary" (click)="onSubmit()">
-      {{ addressForm.get('id').value ? 'Update' : 'Create' }}
+      {{ addressForm.get('id').value ? ('Update' | translate) : ('Create' | translate) }}
     </button>
   </mat-card-actions>
 </mat-card>

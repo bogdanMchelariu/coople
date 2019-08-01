@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'coo-root',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'coople';
+  constructor(private translateService: TranslateService) {
+    translateService.setDefaultLang('en');
+    translateService.use('en');
+  }
 }
