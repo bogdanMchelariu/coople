@@ -13,5 +13,9 @@
   "ZIPPattern": "ZIP-ul trebuie sa inceapa cu ABC",
   "Update": "Updateaza",
   "Create": "Nou",
-  "Edit": "Editeaza"
+  "Edit": "Editeaza",
+
+  "street1": "Strada London",
+  "street2": "Strada Elisabeth",
+  "noStreetFound": "Strada nu exista"
 }

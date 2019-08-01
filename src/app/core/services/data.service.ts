@@ -7,9 +7,6 @@ export class DataService {
   constructor() {
     this.generateList();
   }
-
-  private addressList: Address[] = [];
-
   private mockData: IAddress[] = [
     {
       name: 'First address',
@@ -24,8 +21,17 @@ export class DataService {
         country: 'UK',
         zip: 'ABC21'
       }
+    },
+    {
+      name: 'Third address',
+      address: {
+        country: 'France',
+        zip: 'ABCff'
+      }
     }
   ];
+
+  private addressList: Address[] = [];
 
   private generateList = () => {
     this.addressList = this.mockData.map(address => new Address(address));

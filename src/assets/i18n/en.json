@@ -13,5 +13,10 @@
   "ZIPPattern": "The ZIP must start with ABC",
   "Update": "Update",
   "Create": "Create",
-  "Edit": "Edit"
+  "Edit": "Edit",
+
+  "street1": "London Street",
+  "street2": "Elisabeth Street",
+  "noStreetFound": "ZIP does not correspond to any street"
+
 }

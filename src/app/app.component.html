@@ -1,3 +1,11 @@
-<mat-toolbar color="primary">Bogdan Chelariu - Coople</mat-toolbar>
+<mat-toolbar color="primary"
+  >Bogdan Chelariu - Coople
+  <mat-form-field>
+    <mat-select [value]="selectedLanguage" (valueChange)="changeLanguage($event)">
+      <mat-option value="ro"> Romanian </mat-option>
+      <mat-option value="en"> English </mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-toolbar>
 
 <router-outlet></router-outlet>
