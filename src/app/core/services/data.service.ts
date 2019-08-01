@@ -37,7 +37,7 @@ export class DataService {
     this.addressList = this.mockData.map(address => new Address(address));
   }
 
-  updateList(item: IAddress) {
+  updateList = (item: IAddress) => {
     const itemExist = this.addressList.findIndex(address => item.id === address.id);
     if (itemExist !== -1) {
       const updatedItem = this.addressList[itemExist];

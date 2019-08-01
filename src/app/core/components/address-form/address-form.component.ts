@@ -1,4 +1,13 @@
-import { Component, OnInit, Output, EventEmitter, Input, OnChanges, SimpleChanges, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  Input,
+  OnChanges,
+  SimpleChanges,
+  ViewEncapsulation
+} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { IAddress, Address } from '../../models/Address';
 
@@ -12,31 +21,30 @@ export class AddressFormComponent implements OnInit, OnChanges {
   addressForm: FormGroup;
 
   @Input() editAddress: Address;
-  @Output() newAddressEvent = new EventEmitter<IAddress>();
+  @Output() updateAddressListEvent = new EventEmitter<IAddress>();
 
   constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
-    this.createForm();
+    this.addressForm = this.createForm();
   }
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.editAddress.currentValue) {
       this.addressForm.setValue(changes.editAddress.currentValue);
     }
   }
-  private createForm() {
-    this.addressForm = this.fb.group({
+  private createForm = () =>
+    this.fb.group({
       id: [''],
       name: ['', [Validators.required]],
       address: this.fb.group({
         country: ['', [Validators.required]],
         zip: ['', [Validators.required, Validators.pattern(/^ABC/)]]
       })
-    });
-  }
+    })
 
   onSubmit() {
-    this.newAddressEvent.emit(this.addressForm.value as IAddress);
+    this.updateAddressListEvent.emit(this.addressForm.value as IAddress);
     this.addressForm.reset();
   }
 }

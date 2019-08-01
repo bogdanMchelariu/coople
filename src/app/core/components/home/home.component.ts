@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { DataService } from '../../services';
 import { IAddress, Address } from '../../models/Address';
 
@@ -8,13 +8,11 @@ import { IAddress, Address } from '../../models/Address';
   styleUrls: ['./home.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   selectedAddress: Address;
   constructor(public data: DataService) {}
 
-  ngOnInit() {}
-
-  addAddress = (address: IAddress) => {
+  updateAddressList = (address: IAddress) => {
     this.data.updateList(address);
     this.selectedAddress = null;
   }

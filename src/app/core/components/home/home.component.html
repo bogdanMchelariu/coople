@@ -1,4 +1,7 @@
-<coo-address-form [editAddress]="selectedAddress" (newAddressEvent)="addAddress($event)"></coo-address-form>
+<coo-address-form
+  [editAddress]="selectedAddress"
+  (updateAddressListEvent)="updateAddressList($event)"
+></coo-address-form>
 <coo-address-list
   [addressList]="data.getAddressList() | async"
   (selectAddressEvent)="selectedAddress = $event"

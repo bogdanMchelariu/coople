@@ -14,5 +14,7 @@ export class AppComponent {
     translateService.use(this.selectedLanguage);
   }
 
-  changeLanguage = (lang: string) => this.translateService.use(lang);
+  changeLanguage = (lang: string) => {
+    this.translateService.use(lang);
+  }
 }
